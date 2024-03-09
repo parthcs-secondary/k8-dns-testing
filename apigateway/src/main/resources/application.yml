@@ -1,19 +1,11 @@
+server:
+  port: 8082
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       enabled: true
-      routes:
-        - id: service-a
-          predicates:
-            - Path=/call-service-b
-            - Path=/get-variable-from-a
-          uri: http://service-a:8080
-        - id: service-b
-          predicates:
-            - Path=/call-service-a
-            - Path=/get-variable-from-b
-          uri: http://service-b:8081
-server:
-  port: 8082
+  application:
+    name: api-gateway
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
