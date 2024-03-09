@@ -17,9 +17,9 @@ public class ApigatewayApplication {
 	public RouteLocator routeLocator(RouteLocatorBuilder routeLocatorBuilder){
 		return routeLocatorBuilder.routes()
 				.route(r -> r.path("/service-a/**")
-						.uri("http://servica-a:8080"))
+						.uri("http://localhost:8080"))
 				.route(r -> r.path("/service-b/**")
-						.uri("http://service-b:8081"))
+						.uri("http://localhost:8081"))
 				.build();
 	}
 }
