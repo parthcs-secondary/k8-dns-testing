@@ -16,7 +16,7 @@ public class ServiceAController {
     @GetMapping("/call-service-b")
     public String callServiceB() {
         String variableFromServiceB = restTemplate.getForObject("http://service-b:8081/service-b/get-variable-from-b", String.class);
-        return "Variable from Service B: " + variableFromServiceB;
+        return "<<<- Variable from Service B ->>> " + variableFromServiceB;
     }
 
     @GetMapping("/get-variable-from-a")
